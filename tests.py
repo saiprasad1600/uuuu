@@ -1,14 +1,4 @@
-from fucncs_1 import rows
-
-l = ['5', '57', '58', '97', '98', '99', '145', '146']
-
-
-
-
-
-
-
-
+l = ["Si No", "Item Code", "particulars", "QTY" , "MRP", "Batch" , "Exp Date" , "Disc", "Gst Amd", "Total"]
 
 
 

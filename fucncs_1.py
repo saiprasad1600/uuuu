@@ -68,7 +68,7 @@ def search_by_num(list2):
     list1 = []
     for i in rows:
         if i[0] in list2:
-            b1 = [i[0], i[1]]
-            list1.append(b1)
+
+            list1.append(i)
     return list1
 
