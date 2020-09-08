@@ -20,15 +20,11 @@ if Entry:
         i = True
         while i == True:
             Name = input("Enter Med Name")
-            a = serch_by_name(Name,rows)
-            b = search_by_num(a)
-            Selected_number = int(input("Select the Med Number"))
-            func_in = list(Selected_number)
-            func_call2 = search_by_num(func_in)
-            for i in func_call2:
-                print(i)
             if Name.upper() == "EXIT":
                 i = False
+            else:
+
+
 
 
 
