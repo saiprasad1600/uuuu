@@ -1,6 +1,18 @@
 import csv
 from secrets import *
 import time
+import random
+import math
+
+
+def itemcode():
+    digits = [i for i in range(0, 10)]
+    random_str = ""
+    for i in range(6):
+        index = math.floor(random.random() * 10)
+        random_str += str(digits[index])
+    return random_str
+
 
 with open("MED_LIST.csv", 'r') as csv_file:
     reader = csv.reader(csv_file)
@@ -59,16 +71,35 @@ def serch_by_name(in_,data1):
 
 
 def search_by_num(list2):
-    """
 
-    :param list1: list
-    :return:
-    """
 
     list1 = []
     for i in rows:
         if i[0] in list2:
-
-            list1.append(i)
+            b1 = [i[0], i[1], i[3]]
+            list1.append(b1)
     return list1
+
+def Bill_Item_Search(keyword):
+    Resultant_list = []
+    keyword_list = []
+    for i in keyword:
+        keyword_list.append(i.upper())
+    for medparticular in rows:
+        med_search_list = []
+        for medname  in medparticular[1]:
+            med_search_list.append(medname.upper())
+        if keyword_list == med_search_list[:len(keyword_list)]:
+            Med_details =medparticular[0],medparticular[1],medparticular[3],medparticular[5]
+            Resultant_list.append(Med_details)
+    if len(Resultant_list) >= 1:
+        return Resultant_list
+    else:
+        return ["Sorry!! Currently There Are No Medicines That Matches The Keyword Criteria", " ", " ", " "]
+
+print(Bill_Item_Search("sod"))
+
+
+
+
 
