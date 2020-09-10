@@ -1,6 +1,5 @@
 import csv
 from secrets import *
-import time
 import random
 import math
 
@@ -90,14 +89,13 @@ def Bill_Item_Search(keyword):
         for medname  in medparticular[1]:
             med_search_list.append(medname.upper())
         if keyword_list == med_search_list[:len(keyword_list)]:
-            Med_details =medparticular[0],medparticular[1],medparticular[3],medparticular[5]
+            Med_details = medparticular[0],medparticular[1],medparticular[3],medparticular[5]
             Resultant_list.append(Med_details)
     if len(Resultant_list) >= 1:
         return Resultant_list
     else:
         return ["Sorry!! Currently There Are No Medicines That Matches The Keyword Criteria", " ", " ", " "]
 
-print(Bill_Item_Search("sod"))
 
 
 

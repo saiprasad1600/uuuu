@@ -30,8 +30,7 @@ if Entry:
                 Main_bill.append(values)
             else:
                 i = False
-        if i == False\
-                :
+        if i == False:
             Discount = input("Do you Want to Give any discount")
             if Discount.upper() == "YES":
                 Discount_Percent = float(input("Enter the Discount Percentage"))
@@ -50,10 +49,10 @@ if Entry:
                         Batch = Variable[6]
                         Expdate = Variable[5]
                         Discount = Discount_Percent
-                        Gstamd = int(Variable[7][:2])
+                        Gstamd = float(Variable[7][:2])
                         total = Mrp * Quty + (Mrp * Gstamd) / 100 - (Mrp * Discount_Percent) / 100
                         Input = [Si_no, Itemcode
-                            , Particulars, Quty, Mrp, Batch, Expdate, Discount_Percent , (Mrp * Gstamd) / 100, total]
+                            , Particulars, Quty, Mrp, Batch, Expdate, Discount_Percent, (Mrp * Gstamd) / 100, total]
                         Bill1list.append(Input)
 
             print(tabulate(Bill1list))
